@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
   users : any[] = [];
   selectedUserId : number = 1;
 
-  @Output() change = new EventEmitter<number>();
+  @Output() userSelected = new EventEmitter<number>();
 
   constructor(private dataService: DataService) {}
 
@@ -25,8 +25,12 @@ export class UserComponent implements OnInit {
       })
   }
 
-  onUserChange() {
-    this.change.emit(this.selectedUserId)
+  onUserChange(event:Event) {
+
+    const target = event.target as HTMLSelectElement;
+    this.selectedUserId = Number(target.value);
+
+    this.userSelected.emit(this.selectedUserId)
   }
 
 

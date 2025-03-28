@@ -1,7 +1,7 @@
 <!--p>user works!</p-->
 
 
-<select [(ngModel)]="selectedUserId" (change)="onUserChange()">
+<select [(ngModel)]="selectedUserId" (change)="onUserChange($event)">
   <option *ngFor="let user of users" [value]="user.id">
     {{ user.username }}
   </option>

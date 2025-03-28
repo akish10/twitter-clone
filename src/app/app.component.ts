@@ -5,11 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { PostComponent } from './components/post/post.component';
 import { UserComponent } from './components/user/user.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { CommonModule } from '@angular/common';
+import { EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterOutlet,HttpClientModule,FormsModule,PostComponent,UserComponent,CommentComponent],
+  imports: [HttpClientModule,FormsModule,
+    PostComponent,CommentComponent,UserComponent,PostComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

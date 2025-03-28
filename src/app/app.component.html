@@ -4,3 +4,5 @@
 <app-post [userId]="selectedUserId" (postSelected)="selectedPostId = $event"></app-post>
 
 <app-comment *ngIf="selectedPostId" [postId]="selectedPostId"></app-comment>
+
+
